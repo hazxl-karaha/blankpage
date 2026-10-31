@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CONTACT — blAnk pAge.</title>
+<meta name="description" content="blAnk pAge 문의 · 협업 · 제휴.">
+<meta property="og:title" content="CONTACT — blAnk pAge.">
+<meta property="og:image" content="https://magazine-lake.vercel.app/images/cover-logo-black.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="contact">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header id="hd"></header>
+
+<main id="main">
+  <h1 class="sr">CONTACT.</h1>
+
+  <div class="board">
+
+    <div class="card orange s5 rv">
+      <span class="lb">Contact, blAnk pAge.</span>
+      <p class="serif">문의, 협업, 제휴.</p>
+      <p class="serif sm">폼과 DM, 메일 중 편한 쪽으로 보내주세요.</p>
+      <p class="serif sm">인터뷰 참여를 원하신다면 <a class="ul" href="survey.html">인터뷰 신청 설문</a>으로 와주세요.</p>
+    </div>
+
+    <div class="card black s4 rv">
+      <span class="lb">Reach us</span>
+      <div class="kv">
+        <a href="https://www.instagram.com/blank_page.mag/" target="_blank" rel="noopener"><small>Instagram</small><b>@blank_page.mag ↗</b></a>
+        <a href="mailto:blankpage.mag@gmail.com"><small>Mail</small><b>blankpage.mag@gmail.com</b></a>
+        <div><small>Studio</small><b>blAnk pAge STUDIO · SEOUL</b></div>
+      </div>
+    </div>
+
+    <div class="card glyph s3 rv">
+      <span class="lb">Page, Issue 001</span>
+      <div class="g num">006</div>
+    </div>
+
+    <form class="card form s8 rv" id="cf" novalidate>
+      <span class="lb">Contact form, (Form)</span>
+
+      <label for="f-topic">용건 *
+        <select id="f-topic" name="topic" required>
+          <option value="">선택 ↓</option>
+          <option value="문의">문의</option>
+          <option value="협업">협업</option>
+          <option value="제휴">제휴</option>
+        </select>
+      </label>
+
+      <label for="f-name">이름 *
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </label>
+
+      <label for="f-email">이메일 *
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </label>
+
+      <label for="f-msg">메시지 *
+        <textarea id="f-msg" name="message" required></textarea>
+      </label>
+
+      <label class="check" for="f-consent">
+        <input id="f-consent" name="consent" type="checkbox" required>
+        <span>개인정보 수집·이용에 동의합니다. * <a href="information.html#privacy">자세히 보기</a></span>
+      </label>
+      <p class="notice">수집 항목: 용건, 이름, 이메일, 메시지 · 이용 목적: 문의 응대 · 보유 기간: 응대 완료 후 지체 없이 파기</p>
+
+      <button type="submit">보내기 →</button>
+      <p class="msg" role="status" aria-live="polite"></p>
+    </form>
+
+    <a class="card photo ar-34 s4 rv" href="https://www.instagram.com/blank_page.mag/" target="_blank" rel="noopener">
+      <span class="lb">Poster, Acid</span>
+      <div class="ph"><img loading="lazy" src="https://magazine-lake.vercel.app/images/poster-acid.jpg" alt="애시드 옐로우 포스터"></div>
+    </a>
+
+  </div>
+</main>
+
+<footer id="ft"></footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

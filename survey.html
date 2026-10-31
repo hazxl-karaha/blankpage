@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SURVEY — blAnk pAge.</title>
+<meta name="description" content="같은 서울, 다른 이야기를 수집하는 보관함. 당신의 이야기는 누군가의 영감이 될 하나의 페이지가 됩니다. 인터뷰 신청 설문.">
+<meta property="og:title" content="이야기를 공유해주세요 — blAnk pAge.">
+<meta property="og:image" content="https://magazine-lake.vercel.app/images/cover-logo-black.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/survey.css">
+</head>
+<body data-page="survey">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header id="hd"></header>
+
+<main id="main">
+  <div class="board survey-board">
+
+    <!-- 소개 -->
+    <aside class="card orange intro s4 rv">
+      <span class="lb">Survey, blAnk pAge.</span>
+      <h1 class="intro-title">이야기를<br>공유해주세요.</h1>
+      <p class="serif sm">같은 서울, 다른 이야기를 수집하는 보관함. 당신의 이야기는 누군가의 영감이 될 하나의 페이지가 됩니다.</p>
+      <ul class="notes">
+        <li>정답은 없어요. 나누고 싶은 만큼만 적어주세요.</li>
+        <li>1:1 밋업(커피챗)은 에디터가 선정해 개별 연락드려요.</li>
+        <li>입력하신 정보는 <a href="information.html#privacy">개인정보처리방침</a>에 따라 다룹니다.</li>
+      </ul>
+    </aside>
+
+    <!-- 설문 폼 (Netlify Forms 호환) -->
+    <form class="card form s8 rv" id="sv" name="survey" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="survey">
+      <p hidden><label>Don’t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="sv-head">
+        <span class="lb" id="svLabel">Page 01, Who are you?</span>
+        <span class="sv-count" id="svCount" aria-live="polite">01 / 11</span>
+      </div>
+      <div class="sv-bar" aria-hidden="true"><i id="svBar"></i></div>
+
+      <!-- PAGE 01 -->
+      <section class="step" data-label="Page 01, Who are you?">
+        <h2 class="q" tabindex="-1">오늘 처음 만난 당신이 궁금해요!</h2>
+        <label for="q-job">직업 *
+          <input id="q-job" name="job" type="text" autocomplete="organization-title" required>
+        </label>
+        <label for="q-age">나이 *
+          <input id="q-age" name="age" type="text" inputmode="numeric" autocomplete="off" required>
+        </label>
+        <label for="q-ig">인스타그램 아이디 *
+          <input id="q-ig" name="instagram" type="text" placeholder="@" autocapitalize="none" autocomplete="off" required>
+        </label>
+        <label for="q-dong">내 동네를 자랑해줘 <small>(동까지만 기입)</small> *
+          <input id="q-dong" name="neighborhood" type="text" required>
+        </label>
+        <label for="q-pride">우리 동네의 자랑할 거리
+          <textarea class="sm" id="q-pride" name="neighborhood_pride" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 02 -->
+      <section class="step" data-label="Page 02, Your daily page" hidden>
+        <h2 class="q" tabindex="-1">요즘 나의 일상의 페이지는 어떤가요?</h2>
+        <label for="q-place">나의 하루를 가장 많이 보내는 장소
+          <textarea class="sm" id="q-place" name="daily_place" rows="3"></textarea>
+        </label>
+        <label for="q-first">눈을 뜨면 가장 먼저 떠오르는 일
+          <textarea class="sm" id="q-first" name="daily_first_thought" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 03 -->
+      <section class="step" data-label="Page 03, What are you building?" hidden>
+        <h2 class="q" tabindex="-1">지금 나는 무엇을 향해 가고 있다고 생각하나요?</h2>
+        <p class="qs">앞으로 가장 기대되는 변화가 있다면?</p>
+        <fieldset>
+          <legend class="sr">향해 가고 있는 것</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="goal" value="취업"><span>취업</span></label>
+            <label class="chip"><input type="radio" name="goal" value="이직"><span>이직</span></label>
+            <label class="chip"><input type="radio" name="goal" value="창업"><span>창업</span></label>
+            <label class="chip"><input type="radio" name="goal" value="유학"><span>유학</span></label>
+            <label class="chip"><input type="radio" name="goal" value="여행"><span>여행</span></label>
+            <label class="chip"><input type="radio" name="goal" value="시험"><span>시험</span></label>
+            <label class="chip"><input type="radio" name="goal" value="기타"><span>기타</span></label>
+          </div>
+        </fieldset>
+        <label for="q-goal">기대되는 변화 <small>(기타를 골랐다면 직접 적어주세요)</small>
+          <textarea class="sm" id="q-goal" name="goal_detail" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 04 -->
+      <section class="step" data-label="Page 04, If there were no limits" hidden>
+        <h2 class="q" tabindex="-1">나에게 한계가 없다면 꾸고 싶은 꿈은?</h2>
+        <label for="q-learn">시간과 돈, 실패 걱정도 없다면 무엇을 가장 배우고 싶으신가요?
+          <textarea class="sm" id="q-learn" name="dream_learn" rows="3"></textarea>
+        </label>
+        <label for="q-why">왜 그걸 배우고 싶으신가요?
+          <textarea class="sm" id="q-why" name="dream_why" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 05 -->
+      <section class="step" data-label="Page 05, How do you heal?" hidden>
+        <h2 class="q" tabindex="-1">힘든 하루를 보낸 뒤 다시 나를 회복시키는 방법이 있나요?</h2>
+        <p class="qs">무너질 것 같을 때 가장 도움이 되는 것은 무엇인가요? 나누고 싶은 만큼만 적어주세요.</p>
+        <fieldset>
+          <legend class="sr">회복하는 방법</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="heal" value="운동"><span>운동</span></label>
+            <label class="chip"><input type="radio" name="heal" value="친구"><span>친구</span></label>
+            <label class="chip"><input type="radio" name="heal" value="가족"><span>가족</span></label>
+            <label class="chip"><input type="radio" name="heal" value="취미"><span>취미</span></label>
+            <label class="chip"><input type="radio" name="heal" value="여행"><span>여행</span></label>
+            <label class="chip"><input type="radio" name="heal" value="상담"><span>상담</span></label>
+            <label class="chip"><input type="radio" name="heal" value="기타"><span>기타</span></label>
+          </div>
+        </fieldset>
+        <label for="q-heal">나만의 회복법 <small>(기타를 골랐다면 직접 적어주세요)</small>
+          <textarea class="sm" id="q-heal" name="heal_detail" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 06 -->
+      <section class="step" data-label="Page 06, Your person" hidden>
+        <h2 class="q" tabindex="-1">내 이야기를 가장 편하게 할 수 있는 사람은 누구인가요?</h2>
+        <p class="qs">그 사람은 왜 특별한가요? 힘들 때 가장 먼저 찾게 되는 존재는 누구인가요?</p>
+        <fieldset>
+          <legend class="sr">편안한 존재</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="person" value="나"><span>나</span></label>
+            <label class="chip"><input type="radio" name="person" value="가족"><span>가족</span></label>
+            <label class="chip"><input type="radio" name="person" value="친구"><span>친구</span></label>
+            <label class="chip"><input type="radio" name="person" value="연인"><span>연인</span></label>
+            <label class="chip"><input type="radio" name="person" value="선배"><span>선배</span></label>
+            <label class="chip"><input type="radio" name="person" value="반려동물"><span>반려동물</span></label>
+            <label class="chip"><input type="radio" name="person" value="그 외"><span>그 외</span></label>
+          </div>
+        </fieldset>
+        <label for="q-person">편안한 존재 <small>(그 외를 골랐다면 직접 적어주세요)</small>
+          <textarea class="sm" id="q-person" name="person_detail" rows="3"></textarea>
+        </label>
+      </section>
+
+      <!-- PAGE 07 -->
+      <section class="step" data-label="Page 07, blAnk Archive — My favorite" hidden>
+        <h2 class="q" tabindex="-1">나의 가장 깊은 관심사는 무엇인가요?</h2>
+        <p class="qs">여러 개를 골라도 좋아요.</p>
+        <fieldset>
+          <legend class="sr">관심사</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="interests" value="MUSIC"><span>MUSIC</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="ART"><span>ART</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="BOOK"><span>BOOK</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="AI"><span>AI</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="WORK"><span>WORK</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="LOVE"><span>LOVE</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="LIFE"><span>LIFE</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="TRAVEL"><span>TRAVEL</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="SPORTS"><span>SPORTS</span></label>
+            <label class="chip"><input type="checkbox" name="interests" value="STORY"><span>STORY</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- MEETUP -->
+      <section class="step" data-label="Meetup, 커피챗" hidden>
+        <h2 class="q" tabindex="-1">1:1 밋업(커피챗)에 참여해볼래요?</h2>
+        <p class="qs">에디터가 선정해 개별 연락드려요.</p>
+        <fieldset>
+          <legend class="sr">밋업 참여 여부</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="meetup" value="yes" required><span>네, 1:1 밋업 신청할래요!</span></label>
+            <label class="opt"><input type="radio" name="meetup" value="maybe" required><span>조금 더 고민해볼게요.</span></label>
+            <label class="opt"><input type="radio" name="meetup" value="no" required><span>아쉽지만 다음에 해요.</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- SCHEDULE (밋업 '네'일 때만) -->
+      <section class="step" data-label="Schedule, 1:1 밋업 일정 조율" data-when="meetup-yes" hidden>
+        <h2 class="q" tabindex="-1">희망 일정을 선택해줘.</h2>
+        <p class="qs">예약 가능한 시간 안에서 골라주세요. 최종 일정은 에디터가 확인 후 연락드려요.</p>
+        <label for="q-date">날짜
+          <input id="q-date" name="date" type="date">
+        </label>
+        <fieldset>
+          <legend>예약 가능한 시간</legend>
+          <div class="slots" id="slots"></div>
+        </fieldset>
+      </section>
+
+      <!-- PREVIEW -->
+      <section class="step" data-label="Preview, 그대들의 초서" hidden>
+        <h2 class="q" tabindex="-1">당신의 이야기도 세상에 단 하나뿐인 특별한 에세이로 남겨보고 싶지 않으신가요?</h2>
+        <p class="qs">실제 참여자의 이야기로 만든 에세이예요.</p>
+        <div class="essay" id="essay">
+          <div class="frame">
+            <img src="https://b1ankpage.netlify.app/essay/1.png" alt="에세이 1" loading="lazy">
+            <img src="https://b1ankpage.netlify.app/essay/2.png" alt="에세이 2" loading="lazy" hidden>
+            <img src="https://b1ankpage.netlify.app/essay/3.png" alt="에세이 3" loading="lazy" hidden>
+            <img src="https://b1ankpage.netlify.app/essay/4.png" alt="에세이 4" loading="lazy" hidden>
+          </div>
+          <div class="essay-nav">
+            <button type="button" class="ghost" id="essayPrev">← 이전</button>
+            <span id="essayCount">1 / 4</span>
+            <button type="button" class="ghost" id="essayNext">다음 →</button>
+          </div>
+        </div>
+        <fieldset>
+          <legend class="sr">에세이 참여 의사</legend>
+          <div class="opts row">
+            <label class="opt"><input type="radio" name="essay" value="yes"><span>네, 해볼게요!</span></label>
+            <label class="opt"><input type="radio" name="essay" value="no"><span>다음에 해볼게요.</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="step" data-label="Contact details" hidden>
+        <h2 class="q" tabindex="-1">마지막으로, 연락받을 정보를 알려줘.</h2>
+        <label for="q-name">이름 *
+          <input id="q-name" name="name" type="text" autocomplete="name" required>
+        </label>
+        <fieldset>
+          <legend>성별 <small>(선택)</small></legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="gender" value="남성"><span>남성</span></label>
+            <label class="chip"><input type="radio" name="gender" value="여성"><span>여성</span></label>
+            <label class="chip"><input type="radio" name="gender" value="선택 안 함"><span>선택 안 함</span></label>
+          </div>
+        </fieldset>
+        <label for="q-phone">연락처 <small>(휴대폰 번호)</small> *
+          <input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"
+                 pattern="^01[016789][\- ]?[0-9]{3,4}[\- ]?[0-9]{4}$" data-msg="올바른 연락처를 입력해줘." required>
+        </label>
+
+        <label class="check" for="q-consent">
+          <input id="q-consent" name="consent" type="checkbox" value="agreed" required>
+          <span>개인정보 수집·이용에 동의합니다. * <a href="information.html#privacy">자세히 보기</a></span>
+        </label>
+        <p class="notice">수집 항목: 이름, 성별(선택), 연락처, 나이, 직업, 인스타그램 아이디, 거주 동네(동), 설문 응답 내용, 희망 밋업 일정 · 이용 목적: 인터뷰·밋업 대상자 선정, 연락, 일정 조율 · 보유 기간: 선정 절차 종료 후 지체 없이 파기. 인터뷰가 콘텐츠로 게재되는 경우에는 게재 전에 별도로 동의를 받습니다.</p>
+      </section>
+
+      <p class="msg" id="svMsg" role="status" aria-live="polite"></p>
+
+      <div class="sv-nav">
+        <button type="button" class="ghost" id="svPrev" hidden>← 이전</button>
+        <span class="sp"></span>
+        <button type="button" id="svNext">다음 →</button>
+        <button type="submit" id="svSubmit" hidden>설문 제출하기</button>
+      </div>
+    </form>
+
+    <!-- 제출 완료 -->
+    <div class="card orange s8 done" id="done" tabindex="-1" hidden>
+      <span class="lb">Thank you, blAnk pAge.</span>
+      <p class="serif">사전 설문에 응해주셔서 대단히 감사합니다.</p>
+      <p class="serif sm">에디터가 확인한 뒤, 선정되신 분께 개별 연락드릴게요.</p>
+      <p class="demo-note" id="demoNote" hidden>미리보기 모드입니다. 실제로 전송되지 않았어요.</p>
+      <div class="done-links">
+        <a href="index.html">← 홈으로</a>
+        <a href="https://www.instagram.com/blank_page.mag/" target="_blank" rel="noopener">@blank_page.mag ↗</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer id="ft"></footer>
+<script src="assets/main.js"></script>
+<script src="assets/survey.js"></script>
+</body>
+</html>
